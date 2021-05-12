@@ -14,7 +14,7 @@ text create_text()
         fprintf(stderr, "Not enough memory!\n");
         
         exit(EXIT_FAILURE);
-        free(txt);
+       
     }
     
     
@@ -25,7 +25,7 @@ text create_text()
         fprintf(stderr, "Not enough memory!\n");
         
         exit(EXIT_FAILURE);
-        free(txt);
+        
     }    
 
     txt->strs = std::list<std::string>();

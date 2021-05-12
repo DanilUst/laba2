@@ -29,7 +29,8 @@ text create_text()
 
     txt->cursor->line = txt->strs.end();
     txt->cursor->position = 0;
-	
+    
+    free(txt);
     return txt;
 }
 

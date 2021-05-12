@@ -12,6 +12,7 @@ text create_text()
     if ((txt = (_list *) malloc(sizeof(_list))) == NULL) 
     {
         fprintf(stderr, "Not enough memory!\n");
+        free(txt);
         exit(EXIT_FAILURE);
     }
     
@@ -21,6 +22,7 @@ text create_text()
     if ((txt->cursor = (_crsr *) malloc(sizeof(_crsr))) == NULL) 
     {
         fprintf(stderr, "Not enough memory!\n");
+        free(txt);
         exit(EXIT_FAILURE);
     }    
 
@@ -30,7 +32,7 @@ text create_text()
     txt->cursor->line = txt->strs.end();
     txt->cursor->position = 0;
     
-    free(txt);
+    
     return txt;
 }
 

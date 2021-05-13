@@ -30,6 +30,9 @@ void mwef(text txt)
         txt->cursor->position = i++;
         return;
 }
+
+
+
         
         
         

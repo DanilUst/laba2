@@ -9,7 +9,9 @@ before_install:
 addons:
   sonarcloud:
     organization: "danilust"
-    token: ${SONAR_TOKEN}
+    token: $SONAR_TOKEN
+    
+    
 
 script:
   - qmake
@@ -17,13 +19,15 @@ script:
   - ./tests/tests
 
 after_success:
-  - make clean
+  
   - coveralls --root . -E ".*external.*" -E ".*tests.*"
   - build-wrapper-linux-x86-64 --out-dir bw-output make clean all
   - sonar-scanner -Dsonar.cfamily.build-wrapper-output=bw-output
 
 notifications:
   email: false
+
+
 
 
 

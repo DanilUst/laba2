@@ -49,7 +49,7 @@ TEST(m, negative)
     output_text += "Hello world2" ;
     output_text += "Hello world3|" ;
 
-    //захват вывода
+    
     testing::internal::CaptureStdout();
 
     m(txt, 2, 100);

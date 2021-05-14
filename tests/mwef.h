@@ -19,7 +19,7 @@ TEST(mwef, normal)
     output_text += "Hello world2" ;
     output_text += "Hello| world3" ;
 
-    //захват вывода
+   
     testing::internal::CaptureStdout();
 
     m(txt, 2, 3);
@@ -27,8 +27,6 @@ TEST(mwef, normal)
     show(txt);
 
     std::string text = testing::internal::GetCapturedStdout();
-
-
 
     EXPECT_STREQ(text.c_str(), output_text.c_str());
 
@@ -51,7 +49,7 @@ TEST(mwef, normal2)
     output_text += "Hello world2" ;
     output_text += "Hello world3|" ;
 
-    //захват вывода
+    
     testing::internal::CaptureStdout();
 
     m(txt, 2, 7);
@@ -59,8 +57,6 @@ TEST(mwef, normal2)
     show(txt);
 
     std::string text = testing::internal::GetCapturedStdout();
-
-
 
     EXPECT_STREQ(text.c_str(), output_text.c_str());
 

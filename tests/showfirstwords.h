@@ -18,18 +18,12 @@ TEST(show_first, normal)
     output_text += "Hello";
     output_text += "Hello" ;
     output_text += "Hello" ;
-
-    //захват вывода
+ 
     testing::internal::CaptureStdout();
 
     showfirstwords(txt);
 
-
-
     std::string text = testing::internal::GetCapturedStdout();
-
-
-
     EXPECT_STREQ(text.c_str(), output_text.c_str());
 
     free(txt);
@@ -51,16 +45,12 @@ TEST(show_first, negative)
     output_text += "" ;
     output_text += "" ;
 
-    //захват вывода
+
     testing::internal::CaptureStdout();
 
     showfirstwords(txt);
 
-
-
     std::string text = testing::internal::GetCapturedStdout();
-
-
 
     EXPECT_STREQ(text.c_str(), output_text.c_str());
 

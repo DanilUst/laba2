@@ -20,7 +20,6 @@ TEST(rn, normal)
     output_text += "Hello world2" ;
 
 
-    //захват вывода
     testing::internal::CaptureStdout();
 
     rn(txt, 2);
@@ -49,7 +48,7 @@ TEST(rn,  negative)
     output_text += "Hello world2";
     output_text += "Hello world3";
 
-    //захват вывода
+   
     testing::internal::CaptureStdout();
 
     rn(txt, 100);
@@ -78,7 +77,7 @@ TEST(rn,  negative2)
     output_text += "Hello world2";
     output_text += "Hello world3";
 
-    //захват вывода
+    
     testing::internal::CaptureStdout();
 
     rn(txt, -100);
@@ -86,7 +85,6 @@ TEST(rn,  negative2)
     show(txt);
 
     std::string text = testing::internal::GetCapturedStdout();
-
 
 
     EXPECT_STREQ(text.c_str(), output_text.c_str());

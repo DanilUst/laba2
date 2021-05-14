@@ -20,7 +20,7 @@ TEST(m, positive)
     output_text += "Hello world2" ;
     output_text += "Hello world3" ;
 
-    //захват вывода
+    
     testing::internal::CaptureStdout();
 
     m(txt, 0, 0);
@@ -77,7 +77,7 @@ TEST(m, negative2)
     output_text += "Hello world2" ;
     output_text += "Hello world3" ;
 
-    //захват вывода
+   
     testing::internal::CaptureStdout();
 
     m(txt, 2, -100);
@@ -91,7 +91,7 @@ TEST(m, negative2)
 
     free(txt);
 }
-TEST(m, more_str)
+TEST(m, negative3)
 {
     std::string output_text = "";
 

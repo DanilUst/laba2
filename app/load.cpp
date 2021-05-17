@@ -13,7 +13,7 @@ void load(text txt, string filename)
     char buf[MAXLINE + 1];
 
     char str[100];
-    strncpy(str, filename.c_str());
+    strcpy(str, filename.c_str());
 
 
     if ((f = fopen(str, "r")) == NULL) {

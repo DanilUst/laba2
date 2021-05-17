@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 #include "common.h"
-#include <iostream>
 #include "text.h"
 using namespace std;
 /**
@@ -9,26 +8,28 @@ using namespace std;
  */
 void load(text txt, string filename)
 {
-    ifstream f;
-    f.open(filename);
+     FILE *f;
 
-    if (!f.good()) {
-        cerr << "The file " << filename << " cannot be opened\n";
+    char buf[MAXLINE + 1];
+
+    char str[100];
+    strcpy(str, filename.c_str());
+
+
+    if ((f = fopen(str, "r")) == NULL) {
+        printf("The file cannot be opened\n");
         return;
     }
 
-    
     remove_all(txt);
 
-    string buf;
+    while (fgets(buf, MAXLINE, f)) {
 
-    while (f.good()) {
-        f.getline(&buf[0], MAXLINE);
         append_line(txt, buf);
     }
 
-    f.close();
+
+    fclose(f);
 }
-    
 
 

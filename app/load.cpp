@@ -14,6 +14,9 @@ void load(text txt, string filename)
 
     char str[100];
     strncpy(str, filename.c_str(), 100);
+       if (str[100 - 1] != 0) {
+    // Handle error
+  }
 
 
     if ((f = fopen(str, "r")) == NULL) {

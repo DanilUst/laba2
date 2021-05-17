@@ -7,20 +7,20 @@ using namespace std;
 /**
  * Загружает содержимое указанного файла
  */
-void load(text txt, std::string filename)
+void load(text txt, string filename)
 {
-    std::ifstream f;
+    ifstream f;
     f.open(filename);
 
     if (!f.good()) {
-        std::cerr << "The file " << filename << " cannot be opened\n";
+        cerr << "The file " << filename << " cannot be opened\n";
         return;
     }
 
     
     remove_all(txt);
 
-    std::string buf;
+    string buf;
 
     while (f.good()) {
         f.getline(&buf[0], MAXLINE);

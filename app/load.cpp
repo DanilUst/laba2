@@ -10,7 +10,7 @@ void load(text txt, string filename)
 {
      FILE *f;
 
-    string buf;
+    char buf[MAXLINE+1];
 
     char str[100];
     strcpy(str, filename.c_str());

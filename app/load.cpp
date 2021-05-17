@@ -34,3 +34,4 @@ void load(text txt, string filename)
 
     fclose(f);
 }
+
